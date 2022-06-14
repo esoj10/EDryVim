@@ -1,4 +1,4 @@
-import YoutubePage from "@/cypress/UI Automation/integration/pages/Youtube.page"
+import YoutubePage from "@/cypress/integration/UI Automation/pages/Youtube.page"
 
 describe("in Youtube", () => {
     beforeEach(() => {

@@ -1,4 +1,4 @@
-import FacePage from "@/cypress/UI Automation/integration/pages/Face.page"
+import FacePage from "@/cypress/integration/UI Automation/pages/Face.page"
 
 describe("in facebook", () => {
     beforeEach(() => {

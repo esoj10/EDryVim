@@ -1,5 +1,5 @@
-import litteraPage from "@/cypress/UI Automation/integration/pages/littera.page";
-import LitteraPage from "@/cypress/UI Automation/integration/pages/littera.page"
+import litteraPage from "@/cypress/integration/UI Automation/pages/littera.page";
+import LitteraPage from "@/cypress/integration/UI Automation/pages/littera.page"
 
 describe("in littera", () => {
     beforeEach(() => {
