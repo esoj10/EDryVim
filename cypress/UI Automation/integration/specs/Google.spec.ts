@@ -1,4 +1,4 @@
-import GooglePage from "@pages/Google.page"
+import GooglePage from "@/cypress/UI Automation/integration/pages/Google.page"
 
 describe("in google", () => {
     beforeEach(() => {

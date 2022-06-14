@@ -6,8 +6,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*":["*"],
-            "@pages/*":["cypress/integration/pages/*"],
-            "@specs/*":["cypress/integration/specs/*"],
+            "@pages/*":["cypress/UI Automation/integration/pages/*"],
+            "@specs/*":["cypress/UI Automation/integration/specs/*"],
             "@fixtures/*": ["cypress/fixtures/*"],
         },
         
