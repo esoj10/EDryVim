@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.11",
     "cypress": "^9.5.2",
     "eslint": "^8.17.0",
     "prettier": "^2.6.2"
