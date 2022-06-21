@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "cypress simple test",
   "main": "index.js",
-  "scripts": {
-    "cy:main": "cypress open",
-    "cy:run": "cypress run",
-    "cy:run:specs": "cypress run cypress/integration/specs/*",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,5 +14,26 @@
   },
   "devDependencies": {
     "typescript": "^4.6.2"
+  },
+   "lint-staged": {
+    "*": [
+      "prettier --ignore-unknown --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --max-warnings=0"
+    ]
+  },
+  "scripts": {
+    "cy:main": "cypress open",
+    "cy:run": "cypress run",
+    "cy:main:in:": "cypress open --env domainSuffix=",
+    "cy:run:in": "cypress run --env domainSuffix=",
+    "cy:run:specs": "cypress run cypress/integration/specs/*",
+    "cy:run:in:jose": "cypress run --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:jose": "cypress open --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:stg": "cypress open --env domainSuffix=app-stgcf.motus.com",
+    "cy:main:in:jonahs": "cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
+    "cy:main:in:carlos": "cypress open --env domainSuffix=adminplatform-dev.motusclouds.com",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

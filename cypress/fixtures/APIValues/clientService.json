@@ -1,0 +1,46 @@
+{
+    "SearchCompanyType": {
+        "BY_ID": 0,
+        "BY_ORG_UNIT": 1,
+        "BY_NAME": 2,
+        "BY_LEGACY_CLIENT_ID": 3
+    },
+    "OrderBy": {
+        "NAME": 0,
+        "START_DATE": 1,
+        "ACCOUNT_MANAGER": 2,
+        "STATUS": 3
+    },
+    "ProgramOrderBy": {
+        "ID": 0,
+        "NAME": 1,
+        "LEGACY_GROUP_ID": 2,
+        "STATUS": 3
+    },
+    "SortOrder": {
+        "ASCENDING": 0,
+        "DESCENDING": 1
+    },
+    "MessageAcceptanceFilterType": {
+        "DRIVER_STATUS": 0,
+        "PROGRAM_NAME": 1,
+        "MESSAGE_STATUS": 2
+    },
+    "DriverStatus": {
+        "ACTIVE": 0,
+        "TERMINATED": 1
+    },
+    "MessageAcceptanceStatus": {
+        "ACCEPTED": 0,
+        "DECLINED": 1,
+        "NA": 2
+    },
+    "MessageAcceptanceSortBy": {
+        "FIRST_NAME": 0,
+        "LAST_NAME": 1,
+        "EMPLOYEE_ID": 2,
+        "PROGRAM_NAME": 3,
+        "MESSAGE_STATUS": 4,
+        "MESSAGE_STATUS_TIMESTAMP": 5
+    }
+}

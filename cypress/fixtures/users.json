@@ -1,6 +1,12 @@
-[
-  {
-    "id":"akore",
-    "pass":"Adminis1"
+{
+  "credentials": {
+    "jose": {
+      "id": "akore",
+      "pass": "Adminis1"
+    },
+    "stg": {
+      "id": "akore",
+      "pass": "1"
+    }
   }
-]
+}

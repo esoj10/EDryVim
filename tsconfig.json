@@ -4,10 +4,12 @@
         "lib": ["ES5","DOM"],
         "types": ["cypress"],
         "baseUrl": ".",
+        "resolveJsonModule": true,
         "paths": {
             "@/*":["*"],
             "@pages/*":["cypress/UI Automation/integration/pages/*"],
             "@specs/*":["cypress/UI Automation/integration/specs/*"],
+            "@API/*":["cypress/integration/API EP Automation/*"],
             "@fixtures/*": ["cypress/fixtures/*"],
         },
         

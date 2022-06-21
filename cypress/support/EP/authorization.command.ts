@@ -1,14 +1,17 @@
 import cheerio = require("cheerio");
+import { credentials } from "Cypress/fixtures/users.json";
 
 export const authorization = function () {
-  const url = `${Cypress.env("url")}/auth/v1/tickets`;
+  var cred = (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") ?
+    credentials.jose : credentials.stg;
+  const url = `${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
     method: "POST",
     form: true,
     body: {
-      username: "sloe",
-      password: "1",
+      username: cred.id,
+      password: cred.pass,
     },
   })
     .then((response) => {
@@ -23,13 +26,13 @@ export const authorization = function () {
         method: "POST",
         form: true,
         body: {
-          service: `${Cypress.env("url")}/bankingapi/`,
+          service: `${Cypress.env("domainSuffix")}/adminportal2/`,
         },
       })
     )
     .then((postStRequest) =>
       cy.request({
-        url: `${Cypress.env("url")}/bankingapi/?ticket=${postStRequest.body}`,
+        url: `${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body}`,
         method: "GET",
         form: true,
       })
@@ -37,14 +40,16 @@ export const authorization = function () {
 };
 
 export const authorizationAP2 = function () {
-  const url = `${Cypress.env("url")}/auth/v1/tickets`;
+  var cred = (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") ?
+    credentials.jose : credentials.stg;
+  const url = `${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
     method: "POST",
     form: true,
     body: {
-      username: "sloe",
-      password: "1",
+      username: cred.id,
+      password: cred.pass,
     },
   })
     .then((response) => {
@@ -59,13 +64,13 @@ export const authorizationAP2 = function () {
         method: "POST",
         form: true,
         body: {
-          service: `${Cypress.env("url")}/bankingapi/`,
+          service: `${Cypress.env("domainSuffix")}/adminportal2/`,
         },
       })
     )
     .then((postStRequest) =>
       cy.request({
-        url: `${Cypress.env("url")}/bankingapi/?ticket=${postStRequest.body}`,
+        url: `${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body}`,
         method: "GET",
         form: true,
       })
@@ -74,7 +79,7 @@ export const authorizationAP2 = function () {
 declare global {
   namespace Cypress {
     interface Chainable {
-      authorizationBankingApi: typeof authorization;
+      authorizationAPApi: typeof authorization;
     }
   }
 }

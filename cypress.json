@@ -1,7 +1,15 @@
 {
-    "pageLoadTimeout":200000,
+    "pageLoadTimeout": 200000,
     "viewportWidth": 1366,
     "viewportHeight": 768,
-    "allowfullscreen":true
+    "allowfullscreen": true,
+    "defaultCommandTimeout": 5000,
+    "chromeWebSecurity": false,
+    "env": {
+        "personService": "personService",
+        "SafetyService": "SafetyService",
+        "clientService": "clientService",
+        "domainPrefix": "http://",
+        "domainSuffix": ""
+    }
 }
-
