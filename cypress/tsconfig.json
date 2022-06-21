@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "@pageobjects/*": ["integration/UI/pages/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@specs/*": ["integration/UI/specs/*"]
+    }
+  },
+  "include": ["**/*.ts"]
+}
