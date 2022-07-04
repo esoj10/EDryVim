@@ -1,9 +1,11 @@
 import { URL_CLIENTSERVICE } from "../const";
 
 export const getMessageAcceptanceReport = function () {
+    let curl = URL_CLIENTSERVICE.trim()
+    console.log(curl)
     return cy.request({
+        url: URL_CLIENTSERVICE.trim(),
         method: "POST",
-        url: URL_CLIENTSERVICE,
         headers: {
             "content-type": "application/json",
         },

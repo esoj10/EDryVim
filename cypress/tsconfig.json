@@ -6,11 +6,12 @@
     "lib": ["es5", "dom"],
     "types": ["cypress"],
     "baseUrl": ".",
+    "resolveJsonModule":true,
     "paths": {
       "@/*": ["*"],
-      "@pageobjects/*": ["integration/UI/pages/*"],
+      "@pageobjects/*": ["integration/UI Automation/pages/*"],
       "@fixtures/*": ["fixtures/*"],
-      "@specs/*": ["integration/UI/specs/*"]
+      "@specs/*": ["integration/UI Automation/specs/*"]
     }
   },
   "include": ["**/*.ts"]

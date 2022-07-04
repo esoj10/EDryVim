@@ -1,20 +1,15 @@
 export const URL_SAFETYSERVICE = `
 ${Cypress.env("domainPrefix")}
-${Cypress.env("safetyservice")}.
+${Cypress.env("safetyService")}.
 ${Cypress.env("domainSuffix")}/
-${Cypress.env("safetyservice")}
-/thrift/json`
+${Cypress.env("safetyService")}
+/thrift/json/`.trim()
 
 export const URL_PERSONSERVICE = `
 ${Cypress.env("domainPrefix")}
-${Cypress.env("personservice")}.
+${Cypress.env("personService")}.
 ${Cypress.env("domainSuffix")}/
-${Cypress.env("personservice")}
-/thrift/json`
+${Cypress.env("personService")}
+/thrift/json/`.trim()
 
-export const URL_CLIENTSERVICE = `
-${Cypress.env("domainPrefix")}
-${Cypress.env("clientservice")}.
-${Cypress.env("domainSuffix")} /
-${Cypress.env("clientservice")}
-/thrift/json`
+export const URL_CLIENTSERVICE = `${Cypress.env("domainPrefix")}${Cypress.env("clientService")}.${Cypress.env("domainSuffix")}/${Cypress.env("clientService")}/thrift/json/`.trim()

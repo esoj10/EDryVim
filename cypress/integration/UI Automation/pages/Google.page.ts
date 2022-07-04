@@ -1,4 +1,4 @@
-import Page from "./page";
+import { Page } from "./page";
 
 class GooglePage extends Page {
     get URL() {

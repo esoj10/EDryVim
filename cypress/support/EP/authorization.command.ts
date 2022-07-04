@@ -1,10 +1,9 @@
 import cheerio = require("cheerio");
-import { credentials } from "../../fixtures/users.json";
+import { credentials } from "@fixtures/users.json";
 
 export const authorization = function () {
-  var cred = (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") ?
-    credentials.jose : credentials.stg;
-  const url = `${Cypress.env("domainSuffix")}/auth/v1/tickets`;
+  var cred = validateCredentials();
+  const url = `${Cypress.env("domainPrefixS")}${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
     method: "POST",
@@ -18,6 +17,7 @@ export const authorization = function () {
       const $ = cheerio.load(response.body);
       const getTgtLink = $("form").attr("action");
       const getStUrl = getTgtLink; // -> remover
+      console.log(getStUrl);
       return getStUrl;
     })
     .then((url) =>
@@ -26,7 +26,7 @@ export const authorization = function () {
         method: "POST",
         form: true,
         body: {
-          service: `${Cypress.env("domainSuffix")}/adminportal2/`,
+          service: `${Cypress.env("domainPrefixS")}${Cypress.env("domainSuffix")}/adminportal2/`,
         },
       })
     )
@@ -40,9 +40,8 @@ export const authorization = function () {
 };
 
 export const authorizationAP2 = function () {
-  var cred = (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") ?
-    credentials.jose : credentials.stg;
-  const url = `${Cypress.env("domainSuffix")}/auth/v1/tickets`;
+  var cred = validateCredentials();
+  const url = `https://${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
     method: "POST",
@@ -56,6 +55,7 @@ export const authorizationAP2 = function () {
       const $ = cheerio.load(response.body);
       const getTgtLink = $("form").attr("action");
       const getStUrl = getTgtLink; // -> remover
+      console.log(getStUrl)
       return getStUrl;
     })
     .then((url) =>
@@ -64,22 +64,32 @@ export const authorizationAP2 = function () {
         method: "POST",
         form: true,
         body: {
-          service: `${Cypress.env("domainSuffix")}/adminportal2/`,
+          service: `https://${Cypress.env("domainSuffix")}/adminportal2/`,
         },
       })
     )
     .then((postStRequest) =>
       cy.request({
-        url: `${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body}`,
+        url: `https://${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body} `,
         method: "GET",
         form: true,
       })
     );
 };
+
+function validateCredentials() {
+  if (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") {
+    return credentials.jose;
+  } else {
+    return credentials.stg;
+  }
+
+}
 declare global {
   namespace Cypress {
     interface Chainable {
-      authorizationAPApi: typeof authorization;
+      authorizationApi: typeof authorization;
+      authorizationAPApi: typeof authorizationAP2;
     }
   }
 }

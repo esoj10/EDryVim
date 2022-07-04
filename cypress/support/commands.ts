@@ -9,7 +9,8 @@ import cypress = require("cypress");
 /*
     Autorization
 */
-Cypress.Commands.add("authorizationAPApi", authorizationAPI.authorization);
+Cypress.Commands.add("authorizationApi", authorizationAPI.authorization);
+Cypress.Commands.add("authorizationAPApi", authorizationAPI.authorizationAP2);
 
 /*
     Client Service

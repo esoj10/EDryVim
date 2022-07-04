@@ -6,10 +6,11 @@
     "defaultCommandTimeout": 5000,
     "chromeWebSecurity": false,
     "env": {
-        "personService": "personService",
-        "SafetyService": "SafetyService",
-        "clientService": "clientService",
+        "personService": "personservice",
+        "SafetyService": "safetyservice",
+        "clientService": "clientservice",
         "domainPrefix": "http://",
+        "domainPrefixS": "httpS://",
         "domainSuffix": ""
     }
 }
