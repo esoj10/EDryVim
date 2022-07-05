@@ -10,7 +10,8 @@
         "SafetyService": "safetyservice",
         "clientService": "clientservice",
         "domainPrefix": "http://",
-        "domainPrefixS": "httpS://",
+        "domainPrefixS": "https://",
         "domainSuffix": ""
+
     }
 }

@@ -1,10 +1,23 @@
-import * as authorizationAPI from "./EP/authorization.command";
 import * as clientServiceAPI from "./API/clientService.command"
 import * as safetyServiceAPI from "./API/safetyService.command"
+
 import * as utilsAPI from "./API/utils.command"
+
+import * as authorizationAPI from "./EP/authorization.command";
+import * as generalEndPointEP from "./EP/generalEndPoint.command";
+
+
 import cypress = require("cypress");
 
-//Cypress.Commands.add("",); 
+//to add an command, add a line Cypress.Commands.add("asCommandName",class.function);
+/*
+     _    ____ ___ 
+    / \  |  _ \_ _|
+   / _ \ | |_) | | 
+  / ___ \|  __/| | 
+ /_/   \_\_|  |___|
+                   
+*/
 
 /*
     Autorization
@@ -24,9 +37,27 @@ Cypress.Commands.add("getMessageAcceptanceReportAPI",
 Cypress.Commands.add("sendNotificationsForNewModuleAvailableAPI",
   safetyServiceAPI.sendNotificationsForNewModuleAvailable);
 
+/*
+  _____           _ ____       _       _   
+ | ____|_ __   __| |  _ \ ___ (_)_ __ | |_ 
+ |  _| | '_ \ / _` | |_) / _ \| | '_ \| __|
+ | |___| | | | (_| |  __/ (_) | | | | | |_ 
+ |_____|_| |_|\__,_|_|   \___/|_|_| |_|\__|
+                                           
+*/
 
 /*
-    utils
+    generalEndPoint
+*/
+Cypress.Commands.add("userDetailsEP", generalEndPointEP.userDetails);
+
+/*
+  _   _ _   _ _     
+ | | | | |_(_) |___ 
+ | | | | __| | / __|
+ | |_| | |_| | \__ \
+  \___/ \__|_|_|___/
+                                        
 */
 Cypress.Commands.add("bodyRequestAPI", utilsAPI.bodyRequest);
 Cypress.Commands.add("lstAPI", utilsAPI.lst);
