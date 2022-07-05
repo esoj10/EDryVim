@@ -20,7 +20,12 @@ ${Cypress.env("domainSuffix")}/
 ${Cypress.env("personService")}
 /thrift/json/`.trim()
 
-export const URL_CLIENTSERVICE = `${Cypress.env("domainPrefix")}${Cypress.env("clientService")}.${Cypress.env("domainSuffix")}/${Cypress.env("clientService")}/thrift/json/`.trim()
+export const URL_CLIENTSERVICE = `
+${Cypress.env("domainPrefix")}
+${Cypress.env("clientService")}.
+${Cypress.env("domainSuffix")}/
+${Cypress.env("clientService")}
+/thrift/json/`.trim()
 
 /*
   _____           _ ____       _       _   
@@ -45,3 +50,13 @@ export const URL_UserDetails = `
 ${Cypress.env("domainPrefixS")}
 ${Cypress.env("domainSuffix")}/
 adminportal2/userDetails`.trim()
+
+export const URL_Companies = `
+${Cypress.env("domainPrefixS")}
+${Cypress.env("domainSuffix")}/
+adminportal2/companies`.trim()
+
+export const URL_PermissionsByRole = `
+${Cypress.env("domainPrefixS")}
+${Cypress.env("domainSuffix")}/
+adminportal2/permissions-by-role`.trim()

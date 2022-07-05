@@ -50,6 +50,8 @@ Cypress.Commands.add("sendNotificationsForNewModuleAvailableAPI",
     generalEndPoint
 */
 Cypress.Commands.add("userDetailsEP", generalEndPointEP.userDetails);
+Cypress.Commands.add("permissionsByRoleEP", generalEndPointEP.permissionsByRole);
+Cypress.Commands.add("companiesEP", generalEndPointEP.companies);
 
 /*
   _   _ _   _ _     
@@ -62,3 +64,5 @@ Cypress.Commands.add("userDetailsEP", generalEndPointEP.userDetails);
 Cypress.Commands.add("bodyRequestAPI", utilsAPI.bodyRequest);
 Cypress.Commands.add("lstAPI", utilsAPI.lst);
 Cypress.Commands.add("recAPI", utilsAPI.rec);
+Cypress.Commands.add("GET", utilsAPI.GET);
+Cypress.Commands.add("POST", utilsAPI.POST);

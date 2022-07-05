@@ -1,41 +1,30 @@
-import { URL_CLIENTSERVICE, URL_UserDetails } from "../const";
+import { URL_Companies, URL_UserDetails, URL_PermissionsByRole } from "../const";
 
 export const userDetails = function () {
-    let curl = URL_CLIENTSERVICE.trim()
-    console.log(curl)
-    return cy.request({
-        url: URL_UserDetails.trim(),
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: ""
-    });
+    return cy.GET(URL_UserDetails.trim(), "", "");
 };
 
 export const companies = function () {
-    let curl = URL_CLIENTSERVICE.trim()
-    console.log(curl)
-    return cy.request({
-        url: URL_UserDetails.trim(),
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: {
-            "searchTerm": "",
-            "orderBy": 0,
-            "sortOrder": 0,
-            "limit": 30000,
-            "offset": 0
-        }
-    });
+    let body = {
+        "searchTerm": "",
+        "orderBy": 0,
+        "sortOrder": 0,
+        "limit": 30000,
+        "offset": 0
+    }
+    return cy.GET(URL_Companies.trim(), body, "");
+};
+
+export const permissionsByRole = function () {
+    return cy.GET(URL_PermissionsByRole.trim(), "", "");
 };
 
 declare global {
     namespace Cypress {
         interface Chainable {
             userDetailsEP: typeof userDetails;
+            companiesEP: typeof companies;
+            permissionsByRoleEP: typeof permissionsByRole;
         }
     }
 }
