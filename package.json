@@ -24,6 +24,7 @@
     "cy:run:in:jose": "npx cypress run --env domainSuffix=jbarrantes.motusclouds.com",
     "cy:main:in:jose": "npx cypress open --env domainSuffix=jbarrantes.motusclouds.com",
     "cy:main:in:stg": "npx cypress open --env domainSuffix=app-stgcf.motus.com",
+    "cy:main:in:sbox": "npx cypress open --env domainSuffix=app-sbox.motus.com",
     "cy:main:in:jonahs": "npx cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
     "cy:main:in:carlos": "npx cypress open --env domainSuffix=adminplatform-dev.motusclouds.com"
   }

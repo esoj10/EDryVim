@@ -1,8 +1,10 @@
 import cheerio = require("cheerio");
 import { credentials } from "@fixtures/users.json";
+import { contains } from "cypress/types/jquery";
+import { index } from "cheerio/lib/api/traversing";
 
 export const authorization = function () {
-  var cred = validateCredentials();
+  var cred = getCredentials();
   const url = `${Cypress.env("domainPrefixS")}${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
@@ -37,10 +39,11 @@ export const authorization = function () {
         form: true,
       })
     );
+  supportAPI();
 };
 
 export const authorizationAP2 = function () {
-  var cred = validateCredentials();
+  var cred = getCredentials();
   const url = `https://${Cypress.env("domainSuffix")}/auth/v1/tickets`;
   cy.request({
     url,
@@ -75,16 +78,30 @@ export const authorizationAP2 = function () {
         form: true,
       })
     );
+  supportAPI();
 };
 
-function validateCredentials() {
+function supportAPI() {
+  let domainSuff: String = Cypress.env("domainSuffix");
+  if (domainSuff.includes("motusclouds")) {
+    Cypress.env("apiSupport", domainSuff);
+    Cypress.env("apiPrefix", "http://");
+  } else {
+    let host = domainSuff.substring(
+      domainSuff.indexOf('-') + 1, domainSuff.indexOf('.'));
+    host = host + ".us-west-2.motushost.com";
+    Cypress.env("apiSupport", host);
+    Cypress.env("apiPrefix", "https://");
+  }
+}
+function getCredentials() {
   if (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") {
     return credentials.jose;
   } else {
     return credentials.stg;
   }
-
 }
+
 declare global {
   namespace Cypress {
     interface Chainable {

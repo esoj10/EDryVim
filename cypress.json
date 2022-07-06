@@ -9,8 +9,8 @@
         "personService": "personservice",
         "SafetyService": "safetyservice",
         "clientService": "clientservice",
-        "domainPrefix": "http://",
-        "domainPrefixS": "https://",
+        "mvrService": "mvrservice",
+        "domainPrefix": "https://",
         "domainSuffix": ""
 
     }

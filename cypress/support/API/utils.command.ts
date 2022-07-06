@@ -1,7 +1,7 @@
-export const GET = function (_url: any, _body: any, _heardes: any) {
+export const GET = function (_url: any, _body: any = "", _heardes: any = "") {
     return REQUEST(_url, "GET", _heardes, _body)
 }
-export const POST = function (_url: any, _body: any, _heardes: any) {
+export const POST = function (_url: any, _body: any = "", _heardes: any = "") {
     return REQUEST(_url, "POST", _heardes, _body)
 }
 const REQUEST = function (_url: any, _method: any, _heardes: any, _body: any) {

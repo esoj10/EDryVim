@@ -1,7 +1,7 @@
 import { URL_Companies, URL_UserDetails, URL_PermissionsByRole } from "../const";
 
 export const userDetails = function () {
-    return cy.GET(URL_UserDetails.trim(), "", "");
+    return cy.GET(URL_UserDetails);
 };
 
 export const companies = function () {
@@ -12,11 +12,11 @@ export const companies = function () {
         "limit": 30000,
         "offset": 0
     }
-    return cy.GET(URL_Companies.trim(), body, "");
+    return cy.GET(URL_Companies, body);
 };
 
 export const permissionsByRole = function () {
-    return cy.GET(URL_PermissionsByRole.trim(), "", "");
+    return cy.GET(URL_PermissionsByRole);
 };
 
 declare global {

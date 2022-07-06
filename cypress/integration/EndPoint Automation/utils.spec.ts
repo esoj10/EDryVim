@@ -26,5 +26,6 @@ describe("in client service", function () {
             expect(JSON.stringify(response.body))
                 .include('M3 Super Admin');
         })
+        console.log(Cypress.env("apiSupport"));
     });
 });

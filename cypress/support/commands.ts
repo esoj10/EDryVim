@@ -1,5 +1,6 @@
 import * as clientServiceAPI from "./API/clientService.command"
 import * as safetyServiceAPI from "./API/safetyService.command"
+import * as MVRServiceAPI from "./API/MVRService.command"
 
 import * as utilsAPI from "./API/utils.command"
 
@@ -28,14 +29,20 @@ Cypress.Commands.add("authorizationAPApi", authorizationAPI.authorizationAP2);
 /*
     Client Service
 */
-Cypress.Commands.add("getMessageAcceptanceReportAPI",
-  clientServiceAPI.getMessageAcceptanceReport);
+Cypress.Commands.add("clientRequestAPI",
+  clientServiceAPI.clientRequest);
 
 /*
     Safety Service
 */
-Cypress.Commands.add("sendNotificationsForNewModuleAvailableAPI",
-  safetyServiceAPI.sendNotificationsForNewModuleAvailable);
+Cypress.Commands.add("safetyRequestAPI",
+  safetyServiceAPI.safetyRequest);
+
+
+/*
+    MVR Service
+*/
+Cypress.Commands.add("MVRRequestAPI", MVRServiceAPI.MVRRequest);
 
 /*
   _____           _ ____       _       _   

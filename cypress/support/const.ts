@@ -1,30 +1,50 @@
 /*
-     _    ____ ___ 
+  _   _ ___ 
+ | | | |_ _|
+ | | | || | 
+ | |_| || | 
+  \___/|___|
+            
+*/
+export const URL_BASE = `
+${Cypress.env("domainPrefix")}
+${Cypress.env("domainSuffix")}/
+adminportal2/`.trim();
+
+/*
+     _    ____ ___
     / \  |  _ \_ _|
-   / _ \ | |_) | | 
-  / ___ \|  __/| | 
+   / _ \ | |_) | |
+  / ___ \|  __/| |
  /_/   \_\_|  |___|
-                   
+
 */
 export const URL_SAFETYSERVICE = `
-${Cypress.env("domainPrefix")}
+${Cypress.env("apiPrefix")}
 ${Cypress.env("safetyService")}.
-${Cypress.env("domainSuffix")}/
+${Cypress.env("apiSupport")}/
 ${Cypress.env("safetyService")}
 /thrift/json/`.trim()
 
 export const URL_PERSONSERVICE = `
-${Cypress.env("domainPrefix")}
+${Cypress.env("apiPrefix")}
 ${Cypress.env("personService")}.
-${Cypress.env("domainSuffix")}/
+${Cypress.env("apiSupport")}/
 ${Cypress.env("personService")}
 /thrift/json/`.trim()
 
 export const URL_CLIENTSERVICE = `
-${Cypress.env("domainPrefix")}
+${Cypress.env("apiPrefix")}
 ${Cypress.env("clientService")}.
-${Cypress.env("domainSuffix")}/
+${Cypress.env("apiSupport")}/
 ${Cypress.env("clientService")}
+/thrift/json/`.trim()
+
+export const URL_MVRSERVICE = `
+${Cypress.env("apiPrefix")}
+${Cypress.env("mvrService")}.
+${Cypress.env("apiSupport")}/
+${Cypress.env("mvrService")}
 /thrift/json/`.trim()
 
 /*
@@ -46,17 +66,8 @@ ${Cypress.env("clientService")}
   \___/ \__|_|_|___/
                     
 */
-export const URL_UserDetails = `
-${Cypress.env("domainPrefixS")}
-${Cypress.env("domainSuffix")}/
-adminportal2/userDetails`.trim()
+export const URL_UserDetails = URL_BASE + `userDetails`.trim()
 
-export const URL_Companies = `
-${Cypress.env("domainPrefixS")}
-${Cypress.env("domainSuffix")}/
-adminportal2/companies`.trim()
+export const URL_Companies = URL_BASE + `companies`.trim()
 
-export const URL_PermissionsByRole = `
-${Cypress.env("domainPrefixS")}
-${Cypress.env("domainSuffix")}/
-adminportal2/permissions-by-role`.trim()
+export const URL_PermissionsByRole = URL_BASE + `permissions-by-role`.trim()
