@@ -10,8 +10,6 @@
         "SafetyService": "safetyservice",
         "clientService": "clientservice",
         "mvrService": "mvrservice",
-        "domainPrefix": "https://",
-        "domainSuffix": ""
-
+        "prefix": "https://"
     }
 }

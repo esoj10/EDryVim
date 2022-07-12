@@ -6,6 +6,8 @@ export const POST = function (_url: any, _body: any = "", _heardes: any = "") {
 }
 const REQUEST = function (_url: any, _method: any, _heardes: any, _body: any) {
     let basicHeaders = { "content-type": "application/json" };
+    console.log(_body);
+    console.log(_url);
     return cy.request({
         url: _url,
         method: _method,

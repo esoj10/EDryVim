@@ -21,11 +21,13 @@
      "cy:main:in:": "npx cypress open --env",
     "cy:run:in:": "npx cypress run --env",
     "cy:run:specs": "npx cypress run cypress/integration/specs/*",
-    "cy:run:in:jose": "npx cypress run --env domainSuffix=jbarrantes.motusclouds.com",
-    "cy:main:in:jose": "npx cypress open --env domainSuffix=jbarrantes.motusclouds.com",
-    "cy:main:in:stg": "npx cypress open --env domainSuffix=app-stgcf.motus.com",
-    "cy:main:in:sbox": "npx cypress open --env domainSuffix=app-sbox.motus.com",
-    "cy:main:in:jonahs": "npx cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
-    "cy:main:in:carlos": "npx cypress open --env domainSuffix=adminplatform-dev.motusclouds.com"
+
+    "cy:main:in:stg": "npx cypress open --env domain=app-stgcf.motus.com,apiDomain=stgcf.us-west-2.motushost.com",
+    "cy:main:in:sbox": "npx cypress open --env domain=app-sbox.motus.com,apiDomain=sbox.us-west-2.motushost.com",
+
+    "cy:run:in:jose": "npx cypress run --env domain=jbarrantes.motusclouds.com,apiPrefix=http://",
+    "cy:main:in:jose": "npx cypress open --env domain=jbarrantes.motusclouds.com,apiPrefix=http://",
+    "cy:main:in:jonahs": "npx cypress open --env domain=driversafety-qa-2.motusclouds.com,apiPrefix=http://",
+    "cy:main:in:carlos": "npx cypress open --env domain=adminplatform-dev.motusclouds.com,apiPrefix=http://"
   }
 }

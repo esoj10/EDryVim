@@ -11,6 +11,13 @@ import * as generalEndPointEP from "./EP/generalEndPoint.command";
 import cypress = require("cypress");
 
 //to add an command, add a line Cypress.Commands.add("asCommandName",class.function);
+
+/*
+    Autorization
+*/
+Cypress.Commands.add("authorizationApi", authorizationAPI.authorization);
+Cypress.Commands.add("authorizationAPApi", authorizationAPI.authorizationAP2);
+
 /*
      _    ____ ___ 
     / \  |  _ \_ _|
@@ -19,12 +26,6 @@ import cypress = require("cypress");
  /_/   \_\_|  |___|
                    
 */
-
-/*
-    Autorization
-*/
-Cypress.Commands.add("authorizationApi", authorizationAPI.authorization);
-Cypress.Commands.add("authorizationAPApi", authorizationAPI.authorizationAP2);
 
 /*
     Client Service
@@ -68,6 +69,7 @@ Cypress.Commands.add("companiesEP", generalEndPointEP.companies);
   \___/ \__|_|_|___/
                                         
 */
+
 Cypress.Commands.add("bodyRequestAPI", utilsAPI.bodyRequest);
 Cypress.Commands.add("lstAPI", utilsAPI.lst);
 Cypress.Commands.add("recAPI", utilsAPI.rec);

@@ -20,12 +20,10 @@ describe("in client service", function () {
     });
     it("Get a permision details by user role", function () {
         cy.permissionsByRoleEP().then((response) => {
-            console.log(response);
             expect(JSON.stringify(response.body)).include('24');
             expect(JSON.stringify(response.body)).include('M3 Super Admin');
             expect(JSON.stringify(response.body))
                 .include('M3 Super Admin');
         })
-        console.log(Cypress.env("apiSupport"));
     });
 });

@@ -5,7 +5,7 @@ import { index } from "cheerio/lib/api/traversing";
 
 export const authorization = function () {
   var cred = getCredentials();
-  const url = `${Cypress.env("domainPrefixS")}${Cypress.env("domainSuffix")}/auth/v1/tickets`;
+  const url = `https://${Cypress.env("domain")}/auth/v1/tickets`.trim();
   cy.request({
     url,
     method: "POST",
@@ -17,10 +17,7 @@ export const authorization = function () {
   })
     .then((response) => {
       const $ = cheerio.load(response.body);
-      const getTgtLink = $("form").attr("action");
-      const getStUrl = getTgtLink; // -> remover
-      console.log(getStUrl);
-      return getStUrl;
+      return $("form").attr("action");
     })
     .then((url) =>
       cy.request({
@@ -28,23 +25,22 @@ export const authorization = function () {
         method: "POST",
         form: true,
         body: {
-          service: `${Cypress.env("domainPrefixS")}${Cypress.env("domainSuffix")}/adminportal2/`,
+          service: `https://${Cypress.env("domain")}/adminportal2/`,
         },
       })
     )
     .then((postStRequest) =>
       cy.request({
-        url: `${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body}`,
+        url: `https://${Cypress.env("domain")}/adminportal2/?ticket=${postStRequest.body}`,
         method: "GET",
         form: true,
       })
     );
-  supportAPI();
 };
 
 export const authorizationAP2 = function () {
   var cred = getCredentials();
-  const url = `https://${Cypress.env("domainSuffix")}/auth/v1/tickets`;
+  const url = `https://${Cypress.env("domain")}/auth/v1/tickets`;
   cy.request({
     url,
     method: "POST",
@@ -58,44 +54,30 @@ export const authorizationAP2 = function () {
       const $ = cheerio.load(response.body);
       const getTgtLink = $("form").attr("action");
       const getStUrl = getTgtLink; // -> remover
-      console.log(getStUrl)
       return getStUrl;
     })
     .then((url) =>
       cy.request({
+
         url,
         method: "POST",
         form: true,
         body: {
-          service: `https://${Cypress.env("domainSuffix")}/adminportal2/`,
+          service: `https://${Cypress.env("domain")}/adminportal2/`,
         },
       })
     )
-    .then((postStRequest) =>
+    .then((postStRequest) => {
       cy.request({
-        url: `https://${Cypress.env("domainSuffix")}/adminportal2/?ticket=${postStRequest.body} `,
+        url: `https://${Cypress.env("domain")}/adminportal2/?ticket=${postStRequest.body} `,
         method: "GET",
         form: true,
       })
+    }
     );
-  supportAPI();
 };
-
-function supportAPI() {
-  let domainSuff: String = Cypress.env("domainSuffix");
-  if (domainSuff.includes("motusclouds")) {
-    Cypress.env("apiSupport", domainSuff);
-    Cypress.env("apiPrefix", "http://");
-  } else {
-    let host = domainSuff.substring(
-      domainSuff.indexOf('-') + 1, domainSuff.indexOf('.'));
-    host = host + ".us-west-2.motushost.com";
-    Cypress.env("apiSupport", host);
-    Cypress.env("apiPrefix", "https://");
-  }
-}
 function getCredentials() {
-  if (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") {
+  if (Cypress.env("domain") == "jbarrantes.motusclouds.com") {
     return credentials.jose;
   } else {
     return credentials.stg;

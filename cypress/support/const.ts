@@ -1,3 +1,5 @@
+
+
 /*
   _   _ ___ 
  | | | |_ _|
@@ -7,8 +9,8 @@
             
 */
 export const URL_BASE = `
-${Cypress.env("domainPrefix")}
-${Cypress.env("domainSuffix")}/
+${Cypress.env("prefix")}
+${Cypress.env("domain")}/
 adminportal2/`.trim();
 
 /*
@@ -19,31 +21,51 @@ adminportal2/`.trim();
  /_/   \_\_|  |___|
 
 */
-export const URL_SAFETYSERVICE = `
+export const URL_SAFETYSERVICE = (Cypress.env("apiDomain") === "") ? `
 ${Cypress.env("apiPrefix")}
 ${Cypress.env("safetyService")}.
-${Cypress.env("apiSupport")}/
+${Cypress.env("domain")}/
+${Cypress.env("safetyService")}
+/thrift/json/`.trim() : `
+${Cypress.env("prefix")}
+${Cypress.env("safetyService")}.
+${Cypress.env("apiDomain")}/
 ${Cypress.env("safetyService")}
 /thrift/json/`.trim()
 
-export const URL_PERSONSERVICE = `
+export const URL_PERSONSERVICE = (Cypress.env("apiDomain") === "") ? `
 ${Cypress.env("apiPrefix")}
 ${Cypress.env("personService")}.
-${Cypress.env("apiSupport")}/
+${Cypress.env("domain")}/
+${Cypress.env("personService")}
+/thrift/json/`.trim() : `
+${Cypress.env("prefix")}
+${Cypress.env("personService")}.
+${Cypress.env("apiDomain")}/
 ${Cypress.env("personService")}
 /thrift/json/`.trim()
 
-export const URL_CLIENTSERVICE = `
+export const URL_CLIENTSERVICE = (Cypress.env("apiDomain") === "") ? `
 ${Cypress.env("apiPrefix")}
 ${Cypress.env("clientService")}.
-${Cypress.env("apiSupport")}/
+${Cypress.env("domain")}/
+${Cypress.env("clientService")}
+/thrift/json/`.trim() : `
+${Cypress.env("prefix")}
+${Cypress.env("clientService")}.
+${Cypress.env("apiDomain")}/
 ${Cypress.env("clientService")}
 /thrift/json/`.trim()
 
-export const URL_MVRSERVICE = `
+export const URL_MVRSERVICE = (Cypress.env("apiDomain") === "") ? `
 ${Cypress.env("apiPrefix")}
 ${Cypress.env("mvrService")}.
-${Cypress.env("apiSupport")}/
+${Cypress.env("domain")}/
+${Cypress.env("mvrService")}
+/thrift/json/`.trim() : `
+${Cypress.env("prefix")}
+${Cypress.env("mvrService")}.
+${Cypress.env("apiDomain")}/
 ${Cypress.env("mvrService")}
 /thrift/json/`.trim()
 
