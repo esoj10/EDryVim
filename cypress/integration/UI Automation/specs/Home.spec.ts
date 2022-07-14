@@ -7,7 +7,7 @@ describe("for Home page", () => {
         cy.clearCookies();
         cy.clearLocalStorage();
         LoginPage.Login(credentials.stg.id, credentials.stg.pass);
-    })
+    });
     it("click on affinitiv", () => {
         cy.visit(LoginPage.URL);
         cy.get(HomePage.fistElement, { timeout: 50000 }).should('be.visible');
