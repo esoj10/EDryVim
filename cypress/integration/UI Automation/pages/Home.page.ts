@@ -10,16 +10,16 @@ class HomePage extends Page {
         return '.form-input';
     }
     get dropDownProduct() {
-        return "section.collapsible-section:nth-child(4) > div:nth-child(1)";
+        return ":nth-child(4) > .collapsible-head";
     }
     get checkboxProdFAVR() {
-        return "section.collapsible-section:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(1) > span:nth-child(2)";
+        return ":nth-child(4) > .collapsible-body > :nth-child(1) > .form-group > :nth-child(1) > :nth-child(1) > .form-check-label";
     }
     get checkboxProdCPM() {
-        return "section.collapsible-section:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > label:nth-child(1) > span:nth-child(2)";
+        return ":nth-child(4) > .collapsible-body > :nth-child(1) > .form-group > :nth-child(1) > :nth-child(2) > .form-check-label";
     }
     get checkboxProdTECH() {
-        return "section.collapsible-section:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(1) > span:nth-child(3)";
+        return ":nth-child(4) > .collapsible-body > :nth-child(1) > .form-group > :nth-child(1) > :nth-child(3) > .form-check-label";
     }
     get btnSearch() {
         return "div[class='CqAVzb lJ9FBc'] input[name='btnK']";
