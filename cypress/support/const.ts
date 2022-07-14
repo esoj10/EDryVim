@@ -9,9 +9,11 @@
             
 */
 export const URL_BASE = `
-${Cypress.env("prefix")}
-${Cypress.env("domain")}/
-adminportal2/`.trim();
+${Cypress.env("prefix")}${Cypress.env("domain")}`.trim();
+
+export const URL_LEGACY = URL_BASE + "/system/companies/".trim();
+
+export const URL_AP = URL_BASE + '/adminportal2/'.trim();
 
 /*
      _    ____ ___

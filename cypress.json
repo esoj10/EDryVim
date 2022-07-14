@@ -1,10 +1,10 @@
 {
-    "pageLoadTimeout": 200000,
+    "pageLoadTimeout": 12000,
     "viewportWidth": 1366,
     "viewportHeight": 768,
     "allowfullscreen": true,
-    "defaultCommandTimeout": 5000,
-    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 8000,
+    "chromeWebSecurity": true,
     "env": {
         "personService": "personservice",
         "SafetyService": "safetyservice",
