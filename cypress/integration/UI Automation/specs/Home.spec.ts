@@ -15,11 +15,13 @@ describe("for Home page", () => {
         cy.get(HomePage.fistElement).click();
         cy.contains("Affinitiv");
     });
-    it("check the products filters", () => {
+    it.only("check the products filters", () => {
         cy.visit(LoginPage.URL);
         cy.get(HomePage.fistElement, { timeout: 50000 }).should('be.visible');
-        cy.get(HomePage.inputSearch).type('affinitiv');
-        cy.get(HomePage.fistElement).click();
+        cy.get(HomePage.dropDownProduct).click();
+        cy.get(HomePage.checkboxProdCPM).click();
+        cy.get(HomePage.checkboxProdFAVR).click();
+        cy.get(HomePage.checkboxProdTECH).click();
         cy.contains("Affinitiv");
     });
 })

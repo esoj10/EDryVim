@@ -1,4 +1,5 @@
 import { URL_AP } from "@/support/const";
+import HomePage from "./Home.page";
 import { Page } from "./page";
 
 class LoginPage extends Page {
@@ -22,6 +23,7 @@ class LoginPage extends Page {
         cy.get(this.UserNameInput).type(username);
         cy.get(this.PasswordInput).type(password);
         cy.get(this.LoginButton).click();
+        cy.get(HomePage.fistElement, { timeout: 50000 }).should('be.visible');
     }
 }
 

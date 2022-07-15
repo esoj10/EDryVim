@@ -1,5 +1,5 @@
 {
-    "pageLoadTimeout": 12000,
+    "pageLoadTimeout": 200000,
     "viewportWidth": 1366,
     "viewportHeight": 768,
     "allowfullscreen": true,

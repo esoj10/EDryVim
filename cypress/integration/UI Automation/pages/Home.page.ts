@@ -26,7 +26,12 @@ class HomePage extends Page {
     }
     get fistElement() {
         return 'tbody tr:nth-child(1) td:nth-child(1) div:nth-child(1) span:nth-child(1)';
-        //return '#viewContainer > div > div.table-container > div > div.common-data-table.null > div > div > div.react-bs-table.react-bs-table-bordered > div.react-bs-container-body > table > tbody > tr:nth-child(1) > td.customer-cell > div > span.field-name.customer-name-link'.trim();
+    }
+
+    public getAffinitiv() {
+        cy.get(this.fistElement, { timeout: 50000 }).should('be.visible');
+        cy.get(this.inputSearch).type('affinitiv');
+        cy.get(this.fistElement).click();
     }
 
 }
