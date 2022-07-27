@@ -8,6 +8,12 @@
   \___/|___|
             
 */
+
+export const URL_LOG = `
+${Cypress.env("prefix")}${Cypress.env("domain")}
+/auth/login?service=https%3A%2F%2Fapp-sbox.motus.com%2Fadminportal2%2F
+`.trim();
+
 export const URL_BASE = `
 ${Cypress.env("prefix")}${Cypress.env("domain")}`.trim();
 

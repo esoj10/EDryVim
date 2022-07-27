@@ -1,9 +1,10 @@
 import LoginPage from "@pageobjects/login.page"
 import { credentials } from "@fixtures/users.json"
-import HomePage from "../pages/Home.page";
-import HeadersPage from "../pages/Header.page";
+import HomePage from "@pageobjects/Home.page";
+import HeadersPage from "@pageobjects/Header.page";
 
-describe("for the Main dashboards for a client page", () => {
+
+describe("for a Client's Main dashboards  page", () => {
     beforeEach(() => {
         cy.clearCookies();
         cy.clearLocalStorage();
@@ -24,6 +25,10 @@ describe("for the Main dashboards for a client page", () => {
         cy.get(HeadersPage.tabReports, { timeout: 50000 }).should('be.visible');
         cy.get(HeadersPage.tabReports).click();
         cy.contains("Affinitiv");
+    });
+
+    afterEach("log out", () => {
+        HeadersPage.LogOut();
     });
 
 })

@@ -1,6 +1,7 @@
 import LoginPage from "@pageobjects/login.page"
 import { credentials } from "@fixtures/users.json"
-import HomePage from "../pages/Home.page";
+import HomePage from "@pageobjects/Home.page";
+import HeadersPage from "@pageobjects/Header.page";
 
 describe("for login page", () => {
     beforeEach(() => {
@@ -15,4 +16,7 @@ describe("for login page", () => {
         cy.get(HomePage.fistElement, { timeout: 50000 }).should('be.visible');
         cy.url().should('include', LoginPage.URL);
     })
+    afterEach("log out", () => {
+        HeadersPage.LogOut();
+    });
 })

@@ -9,9 +9,9 @@
     "resolveJsonModule":true,
     "paths": {
       "@/*": ["*"],
-      "@pageobjects/*": ["integration/UI Automation/pages/*"],
-      "@fixtures/*": ["fixtures/*"],
-      "@specs/*": ["integration/UI Automation/specs/*"]
+      "@pageobjects/*": ["./e2e/UI Automation/pages/*"],
+      "@fixtures/*": ["./fixtures/*"],
+      "@specs/*": ["./e2e/UI Automation/specs/*"]
     }
   },
   "include": ["**/*.ts"]
