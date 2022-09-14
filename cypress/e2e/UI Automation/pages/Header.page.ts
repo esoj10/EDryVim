@@ -1,4 +1,4 @@
-import { Page } from "./page";
+import { Page } from "@pageobjects/page";
 
 class HeadersPage extends Page {
     get tabHome() {
@@ -22,6 +22,7 @@ class HeadersPage extends Page {
 
 
     public LogOut() {
+        cy.wait(5000);
         cy.get(this.imgUser, { timeout: 50000 }).should('be.visible');
         cy.get(this.dropdownLogOut).invoke('show');
         cy.get(this.dropdownLogOut).click({ force: true });

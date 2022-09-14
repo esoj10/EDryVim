@@ -1,4 +1,4 @@
-import { Page } from "./page";
+import { Page } from "@pageobjects/page";
 
 class ReportsPage extends Page {
     get linkMileageHistory() {

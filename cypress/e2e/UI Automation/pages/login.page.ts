@@ -1,6 +1,6 @@
 import { URL_AP } from "@/support/const";
-import HomePage from "./Home.page";
-import { Page } from "./page";
+import HomePage from "@pageobjects/Home.page";
+import { Page } from "@pageobjects/page";
 
 class LoginPage extends Page {
     get UserNameInput() {

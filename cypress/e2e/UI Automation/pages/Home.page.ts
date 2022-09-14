@@ -1,5 +1,6 @@
 import { URL_AP } from "@/support/const";
-import { Page } from "./page";
+import { Page } from "@pageobjects/page";
+import { client } from "@fixtures/UIValues/data.json"
 
 class HomePage extends Page {
 
@@ -30,7 +31,7 @@ class HomePage extends Page {
 
     public getAffinitiv() {
         cy.get(this.fistElement, { timeout: 50000 }).should('be.visible');
-        cy.get(this.inputSearch).type('affinitiv');
+        cy.get(this.inputSearch).type(client.name);
         cy.get(this.fistElement).click();
     }
 
