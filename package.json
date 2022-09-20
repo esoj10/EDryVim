@@ -1,21 +1,28 @@
 {
-  "name": "cypress_try",
-  "version": "1.0.0",
-  "description": "cypress simple test",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
     "cypress": "^9.5.2",
+    "cypress-upload-file-post-form": "^1.1.0",
     "eslint": "^8.17.0",
-    "prettier": "^2.6.2"
+    "npx": "^3.0.0",
+    "prettier": "^2.6.2",
+    "source-map-loader": "^4.0.0",
+    "ts-loader": "^9.3.0"
   },
   "devDependencies": {
-    "typescript": "^4.6.2"
+    "@faker-js/faker": "^6.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "cypress": "^9.6.1",
+    "cypress-xpath": "^1.6.2",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "2.6.2",
+    "typescript": "^4.7.4"
   },
-   "lint-staged": {
+  "lint-staged": {
     "*": [
       "prettier --ignore-unknown --write"
     ],
@@ -24,16 +31,23 @@
     ]
   },
   "scripts": {
-    "cy:main": "cypress open",
-    "cy:run": "cypress run",
-    "cy:main:in:": "cypress open --env domainSuffix=",
-    "cy:run:in": "cypress run --env domainSuffix=",
-    "cy:run:specs": "cypress run cypress/integration/specs/*",
-    "cy:run:in:jose": "cypress run --env domainSuffix=jbarrantes.motusclouds.com",
-    "cy:main:in:jose": "cypress open --env domainSuffix=jbarrantes.motusclouds.com",
-    "cy:main:in:stg": "cypress open --env domainSuffix=app-stgcf.motus.com",
-    "cy:main:in:jonahs": "cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
-    "cy:main:in:carlos": "cypress open --env domainSuffix=adminplatform-dev.motusclouds.com",
+    "build": "rm -rf ./js/ && tsc",
+    "cy:main:in:": "npx cypress open --env",
+    "cy:run:in:": "npx cypress run --env",
+    "cy:run:specs": "npx cypress run cypress/integration/specs/*",
+    "cy:run:in:jose": "npx cypress run --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:jose": "npx cypress open --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:stg": "npx cypress open --env domainSuffix=app-stgcf.motus.com",
+    "cy:main:in:jonahs": "npx cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
+    "cy:main:in:carlos": "npx cypress open --env domainSuffix=adminplatform-dev.motusclouds.com",
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esoj10/EDryVim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esoj10/EDryVim/issues"
+  },
+  "homepage": "https://github.com/esoj10/EDryVim#readme"
 }

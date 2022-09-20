@@ -1,5 +1,5 @@
 import cheerio = require("cheerio");
-import { credentials } from "Cypress/fixtures/users.json";
+import { credentials } from "../../fixtures/users.json";
 
 export const authorization = function () {
   var cred = (Cypress.env("domainSuffix") == "jbarrantes.motusclouds.com") ?
