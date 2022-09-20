@@ -1,20 +1,68 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+    "cheerio": "^1.0.0-rc.11",
+    "cypress": "^9.5.2",
+    "cypress-upload-file-post-form": "^1.1.0",
+    "eslint": "^8.17.0",
+    "npx": "^3.0.0",
+    "prettier": "^2.6.2",
+    "source-map-loader": "^4.0.0",
+    "ts-loader": "^9.3.0"
+=======
     "cheerio": "^1.0.0-rc.10",
     "cypress-upload-file-post-form": "^1.1.0",
     "npx": "^10.2.2"
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
   },
   "devDependencies": {
     "@faker-js/faker": "^6.1.2",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+<<<<<<< HEAD
+    "cypress": "^9.6.1",
+    "cypress-xpath": "^1.6.2",
+=======
     "cypress": "^10.3.1",
     "cypress-xpath": "^1.8.0",
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
     "eslint": "^8.15.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "prettier": "2.6.2",
+<<<<<<< HEAD
+    "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --ignore-unknown --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --max-warnings=0"
+    ]
+  },
+  "scripts": {
+    "build": "rm -rf ./js/ && tsc",
+    "cy:main:in:": "npx cypress open --env",
+    "cy:run:in:": "npx cypress run --env",
+    "cy:run:specs": "npx cypress run cypress/integration/specs/*",
+    "cy:run:in:jose": "npx cypress run --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:jose": "npx cypress open --env domainSuffix=jbarrantes.motusclouds.com",
+    "cy:main:in:stg": "npx cypress open --env domainSuffix=app-stgcf.motus.com",
+    "cy:main:in:jonahs": "npx cypress open --env domainSuffix=driversafety-qa-2.motusclouds.com",
+    "cy:main:in:carlos": "npx cypress open --env domainSuffix=adminplatform-dev.motusclouds.com",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esoj10/EDryVim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esoj10/EDryVim/issues"
+  },
+  "homepage": "https://github.com/esoj10/EDryVim#readme"
+=======
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
@@ -32,4 +80,5 @@
     "cy:core:in:jonahs": "npx cypress open --env domain=driversafety-qa-2.motusclouds.com,apiPrefix=http://",
     "cy:core:in:carlos": "npx cypress open --env domain=adminplatform-dev.motusclouds.com,apiPrefix=http://"
   }
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
 }

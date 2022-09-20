@@ -1,7 +1,11 @@
 import cheerio = require("cheerio");
+<<<<<<< HEAD
+import { credentials } from "../../fixtures/users.json";
+=======
 import { credentials } from "@fixtures/users.json";
 import { contains } from "cypress/types/jquery";
 import { index } from "cheerio/lib/api/traversing";
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
 
 export const authorization = function () {
   var cred = getCredentials();

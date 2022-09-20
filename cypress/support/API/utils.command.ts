@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 export const GET = function (_url: any, _body: any = "", _heardes: any = "") {
     return REQUEST(_url, "GET", _heardes, _body)
 }
@@ -16,6 +18,7 @@ const REQUEST = function (_url: any, _method: any, _heardes: any, _body: any) {
     })
 }
 
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
 export const bodyRequest = function (
     methodName: string,
     parameters: any
@@ -43,9 +46,12 @@ declare global {
             bodyRequestAPI: typeof bodyRequest;
             lstAPI: typeof lst;
             recAPI: typeof rec;
+<<<<<<< HEAD
+=======
             POST: typeof POST;
             GET: typeof GET;
 
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
         }
     }
 }
