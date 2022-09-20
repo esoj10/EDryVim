@@ -31,7 +31,7 @@ class HeadersPage extends Page {
     public navReports() {
         cy.get(this.tabReports, { timeout: 50000 }).should('be.visible');
         cy.get(this.tabReports).click();
-        cy.contains("Affinitiv");
+        //cy.contains("Affinitiv");
     }
 }
 
