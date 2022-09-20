@@ -1,46 +1,152 @@
 {
-    "SearchCompanyType": {
-        "BY_ID": 0,
-        "BY_ORG_UNIT": 1,
-        "BY_NAME": 2,
-        "BY_LEGACY_CLIENT_ID": 3
+    "getMessageAcceptanceReport": {
+        "simple": [
+            1,
+            "getMessageAcceptanceReport",
+            1,
+            1,
+            {
+                "1": {
+                    "rec": {
+                        "1": {
+                            "i64": 23643
+                        },
+                        "5": {
+                            "i32": 1
+                        },
+                        "6": {
+                            "i32": 1
+                        },
+                        "7": {
+                            "i32": 100
+                        }
+                    }
+                }
+            }
+        ],
+        "pagination": [
+            1,
+            "getMessageAcceptanceReport",
+            1,
+            1,
+            {
+                "1": {
+                    "rec": {
+                        "1": {
+                            "i64": 23643
+                        },
+                        "2": {
+                            "str": "Program Policy Guide"
+                        },
+                        "5": {
+                            "i32": 1
+                        },
+                        "6": {
+                            "i32": 1
+                        },
+                        "7": {
+                            "i32": 20
+                        },
+                        "8": {
+                            "i32": 0
+                        }
+                    }
+                }
+            }
+        ],
+        "ordByFirstName": [
+            1,
+            "getMessageAcceptanceReport",
+            1,
+            1,
+            {
+                "1": {
+                    "rec": {
+                        "1": {
+                            "i64": 23643
+                        },
+                        "2": {
+                            "str": "Program Policy Guide"
+                        },
+                        "5": {
+                            "i32": 0
+                        },
+                        "6": {
+                            "i32": 0
+                        },
+                        "7": {
+                            "i32": 100
+                        },
+                        "8": {
+                            "i32": 0
+                        }
+                    }
+                }
+            }
+        ]
     },
-    "OrderBy": {
-        "NAME": 0,
-        "START_DATE": 1,
-        "ACCOUNT_MANAGER": 2,
-        "STATUS": 3
+    "findOrgUnitsForPeople": {
+        "simple": [
+            1,
+            "findOrgUnitsForPeople",
+            1,
+            1,
+            {
+                "1": {
+                    "lst": [
+                        "i64",
+                        2,
+                        246184,
+                        246185
+                    ]
+                }
+            }
+        ]
     },
-    "ProgramOrderBy": {
-        "ID": 0,
-        "NAME": 1,
-        "LEGACY_GROUP_ID": 2,
-        "STATUS": 3
-    },
-    "SortOrder": {
-        "ASCENDING": 0,
-        "DESCENDING": 1
-    },
-    "MessageAcceptanceFilterType": {
-        "DRIVER_STATUS": 0,
-        "PROGRAM_NAME": 1,
-        "MESSAGE_STATUS": 2
-    },
-    "DriverStatus": {
-        "ACTIVE": 0,
-        "TERMINATED": 1
-    },
-    "MessageAcceptanceStatus": {
-        "ACCEPTED": 0,
-        "DECLINED": 1,
-        "NA": 2
-    },
-    "MessageAcceptanceSortBy": {
-        "FIRST_NAME": 0,
-        "LAST_NAME": 1,
-        "EMPLOYEE_ID": 2,
-        "PROGRAM_NAME": 3,
-        "MESSAGE_STATUS": 4,
-        "MESSAGE_STATUS_TIMESTAMP": 5
+    "getMvrReport": {
+        "simple": [
+            1,
+            "MvrService:getMvrReport",
+            1,
+            1,
+            {
+                "1": {
+                    "rec": {
+                        "1": {
+                            "str": "akore"
+                        },
+                        "2": {
+                            "i64": 24288
+                        },
+                        "3": {
+                            "rec": {
+                                "1": {
+                                    "i64": 1622505600000
+                                },
+                                "2": {
+                                    "i64": 1655683200000
+                                }
+                            }
+                        },
+                        "6": {
+                            "i32": 1
+                        },
+                        "7": {
+                            "i32": 1
+                        },
+                        "8": {
+                            "rec": {
+                                "1": {
+                                    "i32": 100
+                                },
+                                "2": {
+                                    "i32": 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
     }
 }

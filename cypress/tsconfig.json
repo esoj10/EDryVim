@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "compilerOptions": {
         "target": "ES5",
         "allowJs": true,
@@ -17,3 +18,22 @@
     },
     "include": ["**/*.ts", "support/index.js"],
 }
+=======
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress"],
+    "baseUrl": ".",
+    "resolveJsonModule":true,
+    "paths": {
+      "@/*": ["*"],
+      "@pageobjects/*": ["./e2e/UI Automation/pages/*"],
+      "@fixtures/*": ["./fixtures/*"],
+      "@specs/*": ["./e2e/UI Automation/specs/*"]
+    }
+  },
+  "include": ["**/*.ts"]
+}
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed

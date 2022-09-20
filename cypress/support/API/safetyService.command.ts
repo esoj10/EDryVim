@@ -1,6 +1,6 @@
 import { URL_SAFETYSERVICE } from "../const";
 
-export const sendNotificationsForNewModuleAvailable = function (
+export const safetyRequest = function (
     typeLst: string,
     parameters: any
 ) {
@@ -18,8 +18,7 @@ export const sendNotificationsForNewModuleAvailable = function (
 declare global {
     namespace Cypress {
         interface Chainable {
-            sendNotificationsForNewModuleAvailableAPI:
-            typeof sendNotificationsForNewModuleAvailable;
+            safetyRequestAPI: typeof safetyRequest;
 
         }
     }

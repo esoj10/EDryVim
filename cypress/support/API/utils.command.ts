@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+=======
+export const GET = function (_url: any, _body: any = "", _heardes: any = "") {
+    return REQUEST(_url, "GET", _heardes, _body)
+}
+export const POST = function (_url: any, _body: any = "", _heardes: any = "") {
+    return REQUEST(_url, "POST", _heardes, _body)
+}
+const REQUEST = function (_url: any, _method: any, _heardes: any, _body: any) {
+    let basicHeaders = { "content-type": "application/json" };
+    console.log(_body);
+    console.log(_url);
+    return cy.request({
+        url: _url,
+        method: _method,
+        headers: _heardes != "" ? _heardes : basicHeaders,
+        body: _body
+    })
+}
+
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
 export const bodyRequest = function (
     methodName: string,
     parameters: any
@@ -25,6 +46,12 @@ declare global {
             bodyRequestAPI: typeof bodyRequest;
             lstAPI: typeof lst;
             recAPI: typeof rec;
+<<<<<<< HEAD
+=======
+            POST: typeof POST;
+            GET: typeof GET;
+
+>>>>>>> 98cdbff85bc707f2f8626211a7c40aa8ac6382ed
         }
     }
 }
